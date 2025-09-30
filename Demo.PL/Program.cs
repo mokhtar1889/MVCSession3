@@ -1,4 +1,5 @@
 using Demo.DAL.Data.Contexts;
+using Demo.DAL.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Demo.PL
@@ -16,6 +17,8 @@ namespace Demo.PL
                 options.UseSqlServer(ConnectionString);
             
             });
+
+            builder.Services.AddScoped<IDepartmentRepository,IDepartmentRepository>();
 
             var app = builder.Build();
 
